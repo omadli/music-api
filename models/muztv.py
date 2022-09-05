@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 class Query(BaseModel):
+    """Request query"""
     query: str
     page: Optional[int] = 1
 

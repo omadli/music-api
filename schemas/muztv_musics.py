@@ -1,9 +1,11 @@
 from typing import List
-from pydantic import BaseModel, AnyUrl
+from pydantic import BaseModel, AnyHttpUrl
+
 
 class Music(BaseModel):
+    """Music model"""
     name: str
-    url: AnyUrl
+    url: AnyHttpUrl
     
     class Config:
         schema_extra = {

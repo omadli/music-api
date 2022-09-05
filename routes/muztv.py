@@ -21,6 +21,7 @@ async def on_shutdown():
  
 @muztv_router.get("")
 async def hello() -> dict:
+    """test hello world"""
     return {"message": "hello world"}
     
  
