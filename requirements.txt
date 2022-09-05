@@ -4,3 +4,4 @@ python-slugify~=6.1.2
 fastapi[all]
 environs~=8.0.0
 loguru~=0.4.1
+gunicorn~=20.1.0
