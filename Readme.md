@@ -33,7 +33,7 @@ $ uvicorn main:app
 
 ### Gunicorn configurations
 
-Before you start, you should open the `gunicorn_conf.py` and `musicapi.service` files and edit the paths.
+Before you start, you should open the `gunicorn_conf.py` and `musicapi.service` files and edit the paths. `YOUR_PATH` - edit to working directory path.
 
 1) Copy service file
 ```bash
