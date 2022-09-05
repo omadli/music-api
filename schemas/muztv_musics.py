@@ -17,6 +17,7 @@ class Music(BaseModel):
 
 
 class SearchResult(BaseModel):
+    """Searched musics result model"""
     count: int
     musics: List[Music]
     
@@ -39,5 +40,22 @@ class SearchResult(BaseModel):
     
 
 class TopMusics(BaseModel):
+    """Top 100 musics list model"""
     musics: List[Music]
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "musics" : [
+                    {
+                        "name": "Doston Ergashev - O'shalar",
+                        "url" : "http://muztv.net/mp3/Uzbek/Doston%20Ergashev%20-%20O%27shalar.mp3"
+                    },
+                    {
+                        'name': 'Dildora Niyozova - Onajonim',
+                        'url': 'http://muztv.net/mp3/Uzbek/Dildora%20Niyozova%20-%20Onajonim.mp3'
+                    },
+                ]
+            }
+        }
     

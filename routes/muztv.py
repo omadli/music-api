@@ -19,8 +19,8 @@ async def on_shutdown():
     await m.close()
     
  
-@muztv_router.get("")
-async def hello() -> dict:
+@muztv_router.get("", deprecated=True)
+async def hello_world() -> dict:
     """test hello world"""
     return {"message": "hello world"}
     
@@ -28,7 +28,12 @@ async def hello() -> dict:
     
 @muztv_router.post(path='/search/', response_model=SearchResult)
 async def search(q: Query = Body(...)) -> SearchResult:
-    """Search any music"""
+    """
+    ## Search any music
+    Parametrs:
+    - **query**:str [required] search query
+    - **page**:int [optional, default=1] search page
+    """
     res = await m.search(q.query, q.page)
     if res is not None:
         return SearchResult(**res)
